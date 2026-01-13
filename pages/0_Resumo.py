@@ -154,13 +154,15 @@ if aplicar_filtro:
         "Observação": "",
     })
 st.divider()
+
+
 st.subheader("🗂️ Controle")
 
 df_controle_novo = st.session_state["df_controle_novo"]
 
 st.info(f"Registros selecionados para controle: {len(df_controle_novo)}")
 
-if st.button("📥 Atualizar controle (Excel)"):
+if st.button("📥 Atualizar controle (Excel)", disabled=True):
 
     if df_controle_novo.empty:
         st.error("Nenhum registro encontrado com os filtros aplicados.")
